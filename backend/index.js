@@ -39,9 +39,10 @@ app.get("/profile", authMiddleware, (req, res) => {
   });
 });
 
-app.get("/", (req, res) => {
-  res.send("Backend version 2");
+app.get("/crash", (req, res) => {
+  throw new Error("Test production error");
 });
+
 
 
 app.use(errorHandler);
