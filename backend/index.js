@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const jwt = require("jsonwebtoken");
+const connectDB = require("./config/db");
+
 
 const authMiddleware = require("./middlewares/auth");
 const errorHandler = require("./middlewares/errorHandler");
@@ -10,6 +12,8 @@ const rateLimit = require("express-rate-limit");
 const app = express();
 app.use(cors());
 app.use(express.json());
+
+connectDB();
 
 const SECRET_KEY = process.env.JWT_SECRET;
 
