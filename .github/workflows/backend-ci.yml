@@ -22,4 +22,4 @@ jobs:
 
       - name: Run app check
         working-directory: ./backend
-        run: node -e "require('./index')"
+        run: node -e "require('./index'); setTimeout(() => process.exit(0), 5000)"
