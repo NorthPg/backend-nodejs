@@ -22,4 +22,6 @@ jobs:
 
       - name: Run app check
         working-directory: ./backend
+        env:
+          MONGO_URI: ${{ secrets.MONGO_URI }}
         run: node -e "require('./index'); setTimeout(() => process.exit(0), 5000)"
