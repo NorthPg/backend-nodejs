@@ -17,7 +17,9 @@ jobs:
           node-version: 18
 
       - name: Install
+        working-directory: ./backend
         run: npm install
 
       - name: Run app check
+        working-directory: ./backend
         run: node -e "require('./index')"
